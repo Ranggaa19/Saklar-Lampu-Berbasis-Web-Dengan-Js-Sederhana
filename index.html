@@ -2,37 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.min.css" rel="stylesheet" />
     <title>Ohmyweb4</title>
 </head>
 
 <body>
-    <img src="assets/Images/off.gif" alt="" id="lampu1" />
-    <H1>On And Off Lampu</H1>
-    <button onclick="saklar('on')">Nyalakan Lampu</button>
-     <button onclick="saklar('off')">Matikan Lampu</button>
+    <div class="flex justify-center items-center min-h-screen bg-gray-800 gap-4">
+        <!-- lampu 1 -->
+        <div class="flex flex-col gap-2 py-4">
+            <img src="assets/Images/off.gif" alt="" id="lampu1" />
+            <label for="default-toggle1" class="inline-flex relative items-center
+          cursor-pointer">
+                <input type="checkbox" id="default-toggle1" class="sr-only
+            peer" onchange="saklar()">
+                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none
+            peer-focus:ring-4 peer-focus:ring-blue-300
+            dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700
+            peer-checked:after:translate-x-full peer-checked:after:border-white
+            after:content-[''] after:absolute after:top-[2px] after:left-[2px]
+            after:bg-white after:border-gray-300 after:border after:rounded-full
+            after:h-5 after:w-5 after:transition-all dark:border-gray-600
+            peer-checked:bg-blue-600"></div>
+            </label>
+            <button onclick="saklar('on', 1)" class="bg-white p-4 text-black">Nyalakan Lampu 1</button>
+            <button onclick="saklar('off', 1)" class="bg-white p-4 text-black">Matikan Lampu 1</button>
+        </div>
+        <!-- lampu 2 -->
+        <div class="flex flex-col gap-2 py-4">
+            <img src="assets/Images/off.gif" alt="" id="lampu2" />
+            <button onclick="saklar('on', 2)" class="bg-white p-4 text-black">Nyalakan Lampu 2</button>
+            <button onclick="saklar('off', 2)" class="bg-white p-4 text-black">Matikan Lampu 2</button>
+        </div>
+        <!-- lampu 3 -->
+        <div class="flex flex-col gap-2 py-4">
+            <img src="assets/Images/off.gif" alt="" id="lampu3" />
+            <button onclick="saklar('on', 3)" class="bg-white p-4 text-black">Nyalakan Lampu 3</button>
+            <button onclick=" saklar('off', 3)" class="bg-white p-4 text-black">Matikan Lampu 3</button>
+            </divclass=>
+        </div>
 
-    <!-- ini adalah script js saklar -->
-    <script>
-        function saklar(params) {
-            console.log(params);
-
-            let lampu1 = document.getElementById("lampu1");
-            
-            if(params == "on") {
-                //nyala
-                lampu1.src = "assets/images/on.gif";
-            
-            }
-            if(params == "off"){
-                //Mati
-                lampu1.src = "assets/images/off.gif";
-            }
-
-            return lampu1;
-        }
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.min.js"></script>
+        <!-- ini adalah script js saklar -->
+        <script src="saklar.js" type="application/javascript"></script>
 </body>
 
 </html>
