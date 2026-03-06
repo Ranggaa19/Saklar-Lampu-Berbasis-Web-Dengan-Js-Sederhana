@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohmyweb4</title>
+</head>
+
+<body>
+    <img src="assets/Images/off.gif" alt="" id="lampu1" />
+    <H1>On And Off Lampu</H1>
+    <button onclick="saklar('on')">Nyalakan Lampu</button>
+     <button onclick="saklar('off')">Matikan Lampu</button>
+
+    <!-- ini adalah script js saklar -->
+    <script>
+        function saklar(params) {
+            console.log(params);
+
+            let lampu1 = document.getElementById("lampu1");
+            
+
+
+            if(params == "on") {
+                //nyala
+                lampu1.src = "assets/images/on.gif";
+                
+            }
+            if(params == "off"){
+                //Mati
+                lampu1.src = "assets/images/off.gif";
+            }
+            return lampu1;
+        }
+    </script>
+</body>
+
+</html>
